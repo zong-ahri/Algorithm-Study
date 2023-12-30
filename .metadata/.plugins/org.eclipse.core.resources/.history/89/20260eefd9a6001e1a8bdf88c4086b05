@@ -24,18 +24,14 @@ public class no10811 {
 		for (int m = 0; m < M; m++) {	// M번 역순
 			int i = scanner.nextInt();
 			int j = scanner.nextInt();
-			for (int a = i, b = j; a < j+1; a++, b--) {	// i부터 j까지 역순
-				reversArray[a] = N[b];
+			for (int a = i, int b = j; a < j+1; a++, j--) {	// i부터 j까지 역순
+				reversArray[a] = N[j];
 			}
-			for (int a = 1; a < size+1; a++) {		// 바구니 초기화
-				N[a] = reversArray[a];
-			}
-			
 			
 		}
 		
 		for (int i = 1; i < size+1; i++) {
-			System.out.print(reversArray[i] + " ");
+			System.out.println(reversArray[i]);
 		}
 
 	}

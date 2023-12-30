@@ -35,7 +35,7 @@ public class no10811 {
 		}
 		
 		for (int i = 1; i < size+1; i++) {
-			System.out.print(reversArray[i] + " ");
+			System.out.println(reversArray[i]);
 		}
 
 	}
