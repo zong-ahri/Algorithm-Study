@@ -1,0 +1,22 @@
+package step5;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class no2908 {
+
+	public static void main(String[] args) {
+		// 상수
+		// 숫자를 뒤집어서 비교하는 문제
+		
+		Scanner sc = new Scanner(System.in);
+		
+		String[] aAry = sc.next().split("");
+		String[] bAry = sc.next().split("");
+		
+		System.out.println(Arrays.toString(aAry));
+		System.out.println(Arrays.toString(bAry));
+
+	}
+
+}

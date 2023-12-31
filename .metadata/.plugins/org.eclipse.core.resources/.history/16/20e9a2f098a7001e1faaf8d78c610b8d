@@ -1,0 +1,26 @@
+package step5;
+
+import java.util.*;
+
+public class no5622 {
+
+	public static void main(String[] args) {
+		// 다이얼
+		// 규칙에 따라 문자에 대응하는 수를 출력하는 문제
+
+		Map<Character, Integer> phone = new HashMap<>();
+		int i;
+		
+		for (char ch = 'A'; ch <= 'Z'; ch++) {
+			phone.put(ch, (ch-59)/3);
+		}
+		
+		System.out.println(phone);
+
+//		for (char ch = 'A'; ch <= 'Z'; ch++, i++) {
+//			System.out.println(phone.get(ch));
+//		}
+
+	}
+
+}

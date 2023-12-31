@@ -1,0 +1,25 @@
+package step5;
+
+import java.util.Scanner;
+
+public class no2908 {
+
+	public static void main(String[] args) {
+		// 상수
+		// 숫자를 뒤집어서 비교하는 문제
+		
+		Scanner sc = new Scanner(System.in);
+		
+		String A = sc.next();
+		String B = sc.next();
+		
+		for (int i = 0, j = 2; i < 3; i++, j--) {
+			System.out.println(A.charAt(i));
+		}
+		
+		System.out.println(A);
+		System.out.println(B);
+
+	}
+
+}

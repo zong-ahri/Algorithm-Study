@@ -1,0 +1,24 @@
+package step5;
+
+import java.util.*;
+
+public class no11718 {
+
+	public static void main(String[] args) {
+		// 그대로 출력하기
+
+		Scanner sc = new Scanner(System.in);
+		
+		String[] str = new String[3];
+		
+		str[0] = sc.nextLine();
+		str[1] = sc.nextLine();
+		str[2] = sc.nextLine();
+		
+		System.out.println(str[0]);
+		System.out.println(str[1]);
+		System.out.println(str[2]);
+		
+	}
+
+}
