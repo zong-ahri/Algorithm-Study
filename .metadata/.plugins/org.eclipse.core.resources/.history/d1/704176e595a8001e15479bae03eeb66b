@@ -1,0 +1,37 @@
+package step6;
+
+import java.util.*;
+
+public class no2444 {
+
+	public static void main(String[] args) {
+		// 별 찍기 - 7
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		int N = scanner.nextInt();
+		
+		for (int line = 0; line < 2*N - 1; line++) {
+			if (line < N) {
+				drawingStars(line);
+			} 
+		
+		}
+
+	}
+
+	// 별 그리기
+	private static void drawingStars(int stars) {
+		for (int i = 0; i < stars; i++) {
+			System.out.print("*");
+		}
+	}
+	
+	// 공간 그리기
+	private static void drawingSpace(int i) {
+		
+	}
+	
+	
+
+}

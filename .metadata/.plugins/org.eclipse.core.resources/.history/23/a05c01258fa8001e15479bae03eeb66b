@@ -1,0 +1,23 @@
+package step6;
+
+import java.util.*;
+
+public class no2444 {
+
+	public static void main(String[] args) {
+		// º° Âï±â - 7
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		int N = scanner.nextInt();
+		
+		for (int line = 0; line < N; line++) {
+			for (int i = 0; i < N; i++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+
+	}
+
+}

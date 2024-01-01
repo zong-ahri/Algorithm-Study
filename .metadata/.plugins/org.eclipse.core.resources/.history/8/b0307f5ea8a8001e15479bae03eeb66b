@@ -1,0 +1,48 @@
+package step6;
+
+import java.util.*;
+
+public class no1157 {
+
+	public static void main(String[] args) {
+		// 단어 공부
+		// 주어진 단어에서 가장 많이 사용된 알파벳을 출력하는 문제
+		
+		Scanner sc = new Scanner(System.in);
+		
+		String str = sc.nextLine().toUpperCase();
+		System.out.println(str);
+		
+		Map<Character, Integer> mCount = new HashMap<>();
+		
+		
+		for (int i = 0; i < str.length(); i++) {
+			if (mCount.containsKey(str.charAt(i))) {
+				mCount.put(str.charAt(i), mCount.get(str.charAt(i)) + 1);
+			} else {
+				mCount.put(str.charAt(i), 1);
+			}
+				
+		}
+		
+		System.out.println(mCount);
+		
+		int maxNum = 0;
+		char maxChar = '?';
+		
+		for (char key : mCount.keySet()) {
+			int num = mCount.get(key);
+			if (num > maxNum) {
+				maxNum = num;
+				maxChar = key;
+			} else if (num == maxNum) {
+				maxChar = '?';
+			}
+			
+		}
+		
+		System.out.println(maxChar);
+
+	}
+
+}
