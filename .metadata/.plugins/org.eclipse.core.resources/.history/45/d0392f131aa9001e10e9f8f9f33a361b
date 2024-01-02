@@ -13,7 +13,8 @@ public class no1316 {
 		int number = scanner.nextInt();
 		int count = 0;
 		
-		for (int i = 0; i < number; i++) { // 단어 number 만큼 입력
+		// 단어 number 만큼 입력
+		for (int i = 0; i < number; i++) {
 			if (groupWordCheck(scanner.next())) {
 				count++;
 			}
@@ -23,18 +24,20 @@ public class no1316 {
 
 	}
 	
-	private static boolean groupWordCheck(String word) {
+	public static boolean groupWordCheck(String word) {
 		// 알파벳의 등장 여부를 저장할 배열
 		boolean[] visited = new boolean[26];
 		
 		for (int i = 0; i < word.length(); i++) {
 			char currentChar = word.charAt(i);
 			
-			if (visited[currentChar - 'a']) { // 현재 문자가 이미 등장한 적이 있는 경우
-				if (i > 0 && word.charAt(i - 1) != currentChar) { // 바로 이전 문자와 다르면 그룹 단어가 아님
-					return false; 
+			if (visited[currentChar - 'a']) {
+				// 현재 문자가 이미 등장한 적이 있는 경우
+				if (i > 0 && word.charAt(i - 1) != currentChar) {
+					return false; // 바로 이전 문자와 다르면 그룹 단어가 아님
 				}
-			} else { // 현재 문자가 처음 등장하는 경우
+			} else {
+				// 현재 문자가 처음 등장하는 경우
 				visited[currentChar - 'a'] = true;
 			}
 		}
