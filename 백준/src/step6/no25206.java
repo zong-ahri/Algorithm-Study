@@ -13,29 +13,51 @@ public class no25206 {
 		
 		Scanner scanner = new Scanner(System.in);
 		
-		Map<String, Double> subjectGrade = new HashMap<>();
-		subjectGrade.put("A+", 4.5);
-		subjectGrade.put("A0", 4.0);
-		subjectGrade.put("B+", 3.5);
-		subjectGrade.put("B0", 3.0);
-		subjectGrade.put("C+", 2.5);
-		subjectGrade.put("C0", 2.0);
-		subjectGrade.put("D+", 1.5);
-		subjectGrade.put("D0", 1.0);
-		subjectGrade.put("F", 0.0);
-
-		List<String> gradeList = new ArrayList<>();
+		Map<String, Double> 과목성적목록 = new HashMap<>();
+		과목성적목록.put("A+", 4.5);
+		과목성적목록.put("A0", 4.0);
+		과목성적목록.put("B+", 3.5);
+		과목성적목록.put("B0", 3.0);
+		과목성적목록.put("C+", 2.5);
+		과목성적목록.put("C0", 2.0);
+		과목성적목록.put("D+", 1.5);
+		과목성적목록.put("D0", 1.0);
+		과목성적목록.put("F", 0.0);
+		
+		List<String> 성적목록 = new ArrayList<>();
 		int size = 20;
 		for (int i = 0; i < size; i++) {
-			gradeList.add(scanner.nextLine());
+			성적목록.add(scanner.nextLine());
 		}
 		
-		String[] str = gradeList.get(0).split(" ");
+		과목평점함수(성적목록, 과목성적목록);
 		
-
-		
-		System.out.println(str[1]);
-
 	}
 
+	// 과목평점 구현부
+	private static void 과목평점함수(List<String> gradeList, Map<String, Double> subjectGradeList) {
+		double 학점과목평점합 = 0;
+		double 학점합 = 0;
+		
+		for (int i = 0; i < gradeList.size(); i++) {
+			String[] grades = gradeList.get(i).split(" ");
+			if (subjectGradeList.get(grades[2]) != null) {
+				double 과목평점 = Double.parseDouble(grades[1]);
+				double 학점 = subjectGradeList.get(grades[2]);
+				double 학점과목평점 = 과목평점 * 학점;
+				학점과목평점합 += 학점과목평점;
+				학점합 += 과목평점;
+//				System.out.println("과목이름: " + grades[0]);
+//				System.out.println("과목평점: " + 과목평점);
+//				System.out.println("학점: " + 학점);
+//				System.out.println("학점과목평점: " + 학점과목평점);
+//				System.out.println("학점과목평점합: " + 학점과목평점합);
+//				System.out.println("학점합: " + 학점합);
+			}
+//			System.out.println();
+		}
+		
+		System.out.printf("%f", 학점과목평점합/학점합);
+	}
+	
 }
