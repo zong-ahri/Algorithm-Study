@@ -1,0 +1,45 @@
+package step8;
+
+import java.util.*;
+
+public class no11005 {
+
+	public static void main(String[] args) {
+		// 진법 변환 2
+		// 반대 방향으로 진법을 변환하는 문제
+		
+		// 10진법 수 N을 B진법으로 바꿔 출력하는 프로그램
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		Map<Integer, Character> base = new HashMap<>();
+		for (int i = 0; i < 36; i++) {
+			if (i < 10) {
+				base.put(i, (char)(i+48));
+			} else {
+				base.put(i, (char)(i+55));
+			}
+		}
+		System.out.println(base);
+		
+		int N = scanner.nextInt();
+		int B = scanner.nextInt();
+		
+//		System.out.println(N/B);
+//		System.out.println(N%B);
+		
+		int quotient = N / B;
+		int remainder = N % B;
+		
+		while (true) {
+			if (N > 0) {
+				N = N / B;
+				remainder = N % B;
+				System.out.println(base.get(remainder));
+			} else
+				break;
+		}
+		
+	}
+
+}
