@@ -1,0 +1,22 @@
+package step9;
+
+import java.util.*;
+
+public class no2581 {
+
+	public static void main(String[] args) {
+		// 소수
+		// 2부터 X-1까지 모두 나눠서 X가 소수인지 판별하는 문제 2
+		
+		Scanner scanner = new Scanner(System.in);
+
+		int A = scanner.nextInt();
+		int B = scanner.nextInt();
+		
+		for (int i = A; i <= B; i++) {
+			
+		}
+		
+	}
+
+}

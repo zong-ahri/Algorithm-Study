@@ -10,8 +10,34 @@ public class no5086 {
 		
 		Scanner scanner = new Scanner(System.in);
 		
+		List<String> ary = new ArrayList<>();
 		
-
+		while (true) {
+			int A = scanner.nextInt();
+			int B = scanner.nextInt();
+			int ADividedByB;
+			int BDividedByA;
+			
+			if (A != 0 || B != 0) {
+				ADividedByB = A % B;
+				BDividedByA = B % A;
+			} else {
+				break;
+			}
+			
+			if (ADividedByB != 0 && BDividedByA == 0) {
+				ary.add("factor");
+			} else if (ADividedByB == 0 && BDividedByA != 0) {
+				ary.add("multiple");
+			} else if (ADividedByB != 0 && BDividedByA != 0) {
+				ary.add("neither");
+			} 
+			
+		}
+		
+		for (String str : ary)
+			System.out.println(str);
+		
 	}
 
 }
