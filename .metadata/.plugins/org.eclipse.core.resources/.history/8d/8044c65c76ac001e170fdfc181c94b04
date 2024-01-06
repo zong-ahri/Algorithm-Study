@@ -1,0 +1,38 @@
+package step11;
+
+import java.util.*;
+
+public class no24262 {
+
+	public static void main(String[] args) {
+		// 알고리즘 수업 - 알고리즘의 수행 시간 1
+		// 프로그램의 수행 시간을 분석해 봅시다.    
+		
+		Scanner scanner = new Scanner(System.in);
+	
+		int n = scanner.nextInt();
+	    int count = 1;  // 코드1의 수행 횟수 초기값
+	
+	    // n이 1보다 클 때까지 계속해서 n을 나누고 count를 증가시킴
+	    while (n > 1) {
+	        n /= 2;
+	        count++;
+	    }
+	
+	    int degree = Math.min(count - 1, 3);  // 최고차항의 차수 계산
+	
+	    System.out.println(count);
+	    System.out.println(degree);
+	}
+
+	public static int[] menOfPassion(int n) {
+        // 코드1의 수행 횟수
+        int executions = (n % 2 == 0) ? n / 2 : (n + 1) / 2;
+
+        // 다항식으로 나타낼 때 최고차항의 차수
+        int degree = (executions > 3) ? 4 : executions;
+
+        return new int[]{executions, degree};
+    }
+
+}

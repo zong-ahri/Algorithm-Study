@@ -1,0 +1,76 @@
+package step08;
+
+import java.util.*;
+
+public class no2720 {
+
+	public static void main(String[] args) {
+		// 세탁소 사장 동혁
+		
+
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		int T; // 케이스 개수
+		int C; // 거스름돈 (단위는 센트)
+		
+		T = scanner.nextInt();
+		int[][] aryC = new int[T][4];
+		for (int i = 0; i < T; i++) {
+			C = scanner.nextInt();
+			aryC[i][0] = function(C).get("quarter");
+			aryC[i][1] = function(C).get("dime");
+			aryC[i][2] = function(C).get("nickel");
+			aryC[i][3] = function(C).get("penny");
+		}
+		
+		for (int i = 0; i < aryC.length; i++) {
+			for (int j = 0; j < aryC[i].length; j++) {
+				System.out.print(aryC[i][j] + " ");
+			}
+			System.out.println();
+		}
+		
+
+	}
+	
+	private static Map<String, Integer> function(int C) {
+		
+		final int quarter = 25;
+		final int dime = 10;
+		final int nickel = 5;
+		final int penny = 1;
+		int quotient = 0; // 몫
+		
+		Map<String, Integer> result = new HashMap<>();
+		result.put("quarter", 0);
+		result.put("dime", 0);
+		result.put("nickel", 0);
+		result.put("penny", 0);
+		
+		while (C > 0) {
+			if (C >= quarter) {
+				quotient = C / quarter;
+				C = C % quarter;
+				result.put("quarter", quotient);
+			} else if (C >= dime && C < quarter) {
+				quotient = C / dime;
+				C = C % dime;
+				result.put("dime", quotient);
+			} else if (C >= nickel && C < dime) {
+				quotient = C / nickel;
+				C = C % nickel;
+				result.put("nickel", quotient);
+			} else if (C >= penny && C < nickel) {
+				quotient = C / penny;
+				C = C % penny;
+				result.put("penny", quotient);
+			} else
+				break;
+		}
+//		System.out.println(result);
+		
+		return result;
+	}
+
+}
