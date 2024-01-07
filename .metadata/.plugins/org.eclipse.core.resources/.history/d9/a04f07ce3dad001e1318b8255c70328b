@@ -23,14 +23,25 @@ public class no24313 {
 		
 		// 함수 f(n) = a1n + a0
 		// O(n) 정의를 만족하는지 확인. f(n) <= c * g(n)
-		// a0 <= c*g(n0) - a1*n0
+//		if (a1 <= c && n0 <= a0) {
+//			System.out.println(1);
+//		} else {
+//			System.out.println(0);
+//		}
 		
-		if (a1*n0+a0 <= c*n0 && c >= a1) {
-			System.out.println(1);
-		} else {
-			System.out.println(0);
+		
+		for (int i = n0; i <= n0; i++) {
+			int fn = a1*i + a0;
+			int gn = c * i;
+			if (fn <= gn) {
+				System.out.println(1);
+			} else {
+				System.out.println(0);
+			}
 		}
 		
+		int n;
+			
 	}
 
 }
