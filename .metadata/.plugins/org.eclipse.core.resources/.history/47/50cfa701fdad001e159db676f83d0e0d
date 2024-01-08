@@ -12,7 +12,7 @@ public class no2231 {
 		
 		long N = scanner.nextInt();
 		
-		for (int i = 1; i < N+1; i++) {
+		for (int i = 1; i < N; i++) {
 			String strI = Integer.toString(i);
 			String[] aryStrI = strI.split("");
 			long[] aryIntI = new long[aryStrI.length]; 
@@ -31,16 +31,12 @@ public class no2231 {
 //				System.out.println("result: "+ i);
 				System.out.println(i);
 				break;
-			} else if (i == N-1) {
+			} else if (i == N-1 || i == 1) {
 				System.out.println(0);
-				break;
 			}
 			
 		}
 		
-		if (N == 1) {
-			System.out.println(0);
-		}
 
 	}
 

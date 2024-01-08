@@ -10,37 +10,30 @@ public class no2231 {
 		
 		Scanner scanner = new Scanner(System.in);
 		
-		long N = scanner.nextInt();
+		int N = scanner.nextInt();
 		
-		for (int i = 1; i < N+1; i++) {
+		for (int i = 1; i < N; i++) {
 			String strI = Integer.toString(i);
 			String[] aryStrI = strI.split("");
-			long[] aryIntI = new long[aryStrI.length]; 
-			long sum = 0;
+			int[] aryIntI = new int[aryStrI.length]; 
+			int sum = 0;
 			
 //			System.out.println("i: "+i);
 //			System.out.println("strN: "+strI);
 			for (int j = 0; j < aryStrI.length; j++) {
 //				System.out.println("aryStrN["+j+"]: "+aryStrI[j]);
 				aryIntI[j] = Integer.parseInt(aryStrI[j]);
-				sum += aryIntI[j];
 //				System.out.println("aryIntN["+j+"]: "+aryIntI[j]);
+				sum += aryIntI[j];
 			}
 			
 			if (N == i+sum) {
-//				System.out.println("result: "+ i);
-				System.out.println(i);
-				break;
-			} else if (i == N-1) {
-				System.out.println(0);
+				System.out.println("result: "+ i);
 				break;
 			}
 			
 		}
 		
-		if (N == 1) {
-			System.out.println(0);
-		}
 
 	}
 

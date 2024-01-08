@@ -10,13 +10,13 @@ public class no2231 {
 		
 		Scanner scanner = new Scanner(System.in);
 		
-		long N = scanner.nextInt();
+		int N = scanner.nextInt();
 		
-		for (int i = 1; i < N+1; i++) {
+		for (int i = 1; i < N; i++) {
 			String strI = Integer.toString(i);
 			String[] aryStrI = strI.split("");
-			long[] aryIntI = new long[aryStrI.length]; 
-			long sum = 0;
+			int[] aryIntI = new int[aryStrI.length]; 
+			int sum = 0;
 			
 //			System.out.println("i: "+i);
 //			System.out.println("strN: "+strI);
@@ -31,16 +31,10 @@ public class no2231 {
 //				System.out.println("result: "+ i);
 				System.out.println(i);
 				break;
-			} else if (i == N-1) {
-				System.out.println(0);
-				break;
 			}
 			
 		}
 		
-		if (N == 1) {
-			System.out.println(0);
-		}
 
 	}
 

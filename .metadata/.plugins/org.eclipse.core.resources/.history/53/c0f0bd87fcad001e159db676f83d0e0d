@@ -12,35 +12,31 @@ public class no2231 {
 		
 		long N = scanner.nextInt();
 		
-		for (int i = 1; i < N+1; i++) {
+		for (int i = 1; i < N; i++) {
 			String strI = Integer.toString(i);
 			String[] aryStrI = strI.split("");
 			long[] aryIntI = new long[aryStrI.length]; 
 			long sum = 0;
 			
-//			System.out.println("i: "+i);
-//			System.out.println("strN: "+strI);
+			System.out.println("i: "+i);
+			System.out.println("strN: "+strI);
 			for (int j = 0; j < aryStrI.length; j++) {
-//				System.out.println("aryStrN["+j+"]: "+aryStrI[j]);
+				System.out.println("aryStrN["+j+"]: "+aryStrI[j]);
 				aryIntI[j] = Integer.parseInt(aryStrI[j]);
 				sum += aryIntI[j];
-//				System.out.println("aryIntN["+j+"]: "+aryIntI[j]);
+				System.out.println("aryIntN["+j+"]: "+aryIntI[j]);
 			}
 			
 			if (N == i+sum) {
-//				System.out.println("result: "+ i);
+				System.out.println("result: "+ i);
 				System.out.println(i);
 				break;
-			} else if (i == N-1) {
+			} else {
 				System.out.println(0);
-				break;
 			}
 			
 		}
 		
-		if (N == 1) {
-			System.out.println(0);
-		}
 
 	}
 
