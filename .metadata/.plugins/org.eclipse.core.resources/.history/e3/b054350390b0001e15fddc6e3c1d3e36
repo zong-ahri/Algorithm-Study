@@ -15,6 +15,7 @@ public class no11651 {
 		// 좌표를 다른 순서로 정렬하는 문제
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		StringTokenizer st;
 		
 		int N = Integer.parseInt(br.readLine());
