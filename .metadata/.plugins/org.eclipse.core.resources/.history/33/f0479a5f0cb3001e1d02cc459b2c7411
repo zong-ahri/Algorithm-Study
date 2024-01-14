@@ -34,8 +34,6 @@ public class no18870 {
 			}
 		}
 		
-		System.out.println(rankMap);
-		
 		StringBuilder sb = new StringBuilder();
 		
 		for (int i : xPoints) {

@@ -1,0 +1,20 @@
+package step14;
+
+import java.io.*;
+import java.util.*;
+
+public class no10815 {
+
+	public static void main(String[] args) throws IOException {
+		// 숫자 카드
+		// 카드의 집합을 만들어 특정 카드가 집합에 있는지 빠르게 찾는 문제
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int N = Integer.parseInt(br.readLine());
+		int[] arrN = new int[N];
+		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+		
+		
+	}
+
+}

@@ -24,7 +24,7 @@ public class no18870 {
 		
 		Arrays.sort(xPointsSort);
 		
-		System.out.println(Arrays.toString(xPointsSort));
+//		System.out.println(Arrays.toString(xPointsSort));
 
 		int count = 0;
 		for (int i : xPointsSort) {
