@@ -1,0 +1,37 @@
+package step14;
+
+import java.io.*;
+import java.util.*;
+
+public class no7785 {
+
+	public static void main(String[] args) throws IOException {
+		// 회사에 있는 사람
+		// 지금까지는 삽입만 했습니다. 이제 제거도 해봅시다.
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		int N = Integer.parseInt(br.readLine());
+		List<String> ary = new ArrayList<>();
+		
+		
+		StringTokenizer st;
+		
+		for (int i = 0; i < N; i++) {
+			st = new StringTokenizer(br.readLine());
+			String name = st.nextToken(); 
+			
+			if (st.nextToken() == "enter") {
+				ary.add(name);
+			} else if (st.nextToken() == "leave") {
+				ary.remove(name);
+			}
+		}
+		
+		System.out.println(ary);
+		
+		
+
+	}
+
+}
