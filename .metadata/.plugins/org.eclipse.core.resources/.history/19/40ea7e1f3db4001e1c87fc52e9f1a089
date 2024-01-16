@@ -1,0 +1,25 @@
+package step14;
+
+import java.io.*;
+import java.util.*;
+
+public class no14425 {
+
+	public static void main(String[] args) throws IOException {
+		// 문자열 집합
+		// 수 대신 문자열을 저장하는 문제
+
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st;
+		
+		st = new StringTokenizer(br.readLine(), " ");
+		int N = Integer.parseInt(st.nextToken());
+		int M = Integer.parseInt(st.nextToken());
+		
+		
+		System.out.printf("%d%d", N, M);
+		
+		
+	}
+
+}
