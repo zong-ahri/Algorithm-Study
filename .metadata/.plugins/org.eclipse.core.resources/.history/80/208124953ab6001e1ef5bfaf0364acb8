@@ -1,0 +1,53 @@
+package step14;
+
+import java.io.*;
+import java.util.*;
+
+public class no1764 {
+
+	public static void main(String[] args) throws IOException {
+		// 듣보잡
+		// 듣도 보도 못한 문제
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st;
+		StringBuilder sb = new StringBuilder();
+		
+		st = new StringTokenizer(br.readLine(), " ");
+		int N = Integer.parseInt(st.nextToken());
+		int M = Integer.parseInt(st.nextToken());
+		List<String> noListen = new ArrayList<>();
+		List<String> noSee = new ArrayList<>();
+		for (int i = 0; i < N; i++) {
+			noListen.add(br.readLine());
+		}
+		for (int i = 0; i < M; i++) {
+			noSee.add(br.readLine());
+		}
+		
+		int count = 0;
+		List<String> noListenSee = new ArrayList<>();
+		for (int i = 0; i < Math.min(N, M); i++) {
+			if (Math.min(N, M) == noListen.size()) {
+				if (noSee.contains(noListen.get(i))) {
+					noListenSee.add(noListen.get(i));
+					count++;
+				}
+			} else {
+				if (noSee.contains(noListen.get(i))) {
+					noListenSee.add(noListen.get(i));
+					count++;
+				}
+			}
+		}
+		Collections.sort(noListenSee);
+		
+		sb.append(count).append('\n');
+		for (int i = 0; i < noListenSee.size(); i++) {
+			sb.append(noListenSee.get(i)).append('\n');
+		}
+		System.out.println(sb);
+		
+	}
+
+}

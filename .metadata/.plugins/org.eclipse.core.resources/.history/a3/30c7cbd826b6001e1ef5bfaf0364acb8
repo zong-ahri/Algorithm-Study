@@ -1,0 +1,23 @@
+package step14;
+
+import java.io.*;
+import java.util.*;
+
+public class no1620 {
+
+	public static void main(String[] args) throws IOException {
+		// 나는야 포켓몬 마스터 이다솜
+		// 맵을 사용하여 이름과 수를 연결짓는 문제
+		
+		 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		 StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+		 
+		 int N = Integer.parseInt(st.nextToken());
+		 int M = Integer.parseInt(st.nextToken());
+		 
+		 System.out.println("N: "+N);
+		 System.out.println("M: "+M);
+
+	}
+
+}
