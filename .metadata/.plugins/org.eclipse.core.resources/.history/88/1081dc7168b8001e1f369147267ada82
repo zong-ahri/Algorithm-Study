@@ -1,0 +1,49 @@
+package step15;
+
+import java.io.*;
+import java.util.*;
+
+public class no1735 {
+
+	public static void main(String[] args) throws IOException {
+		// 분수 합
+		// 분수를 더하고 약분하는 문제
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st;
+		StringBuilder sb = new StringBuilder();
+		
+		st = new StringTokenizer(br.readLine(), " ");
+		int A1 = Integer.parseInt(st.nextToken());
+		int B1 = Integer.parseInt(st.nextToken());
+		st = new StringTokenizer(br.readLine(), " ");
+		int A2 = Integer.parseInt(st.nextToken());
+		int B2 = Integer.parseInt(st.nextToken());
+		
+		int gcd = getGCD(B1, B2);
+		
+		int A3 = A1*B2/gcd + A2*B1/gcd;
+		int B3 = getLCM(B1, B2);
+
+		sb.append(A3).append(' ').append(B3);
+		System.out.println(sb);
+		
+	}
+	
+	public static int getGCD(int a, int b) { // 최대공배수
+		if (a < b) {
+			int temp = a;
+			a = b;
+			b = temp;
+		}
+		if (b == 0) {
+			return a;
+		}
+		return getGCD(b, a % b);
+	}
+
+	public static int getLCM(int a, int b) { // 최소공배수
+		return a * b / getGCD(a, b);
+	}
+	
+}
