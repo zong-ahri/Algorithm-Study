@@ -13,27 +13,30 @@ public class no2485 {
 		StringBuilder sb = new StringBuilder();
 		
 		int N = Integer.parseInt(br.readLine());
-		int[] streetTree = new int[N];
+		List<Integer> arr = new ArrayList<>();
 		
 		for (int i = 0; i < N; i++) {
-			streetTree[i] = Integer.parseInt(br.readLine());
+			arr.add(Integer.parseInt(br.readLine()));
 		}
 
-		int gcd = 0; // 가로수 간격의 최대 공약수를 저장하는 변수
-		
-		for (int i = 0; i < N-1; i++) {
-			int distance = streetTree[i+1] - streetTree[i];
-			gcd = getGCD(distance, gcd); // 가로수 간격의 최대 공약수
+		Set<Integer> arr2 = new HashSet<>(arr);
+		int gcd = getGCD(arr);
+		int step = arr.get(0);
+		while (true) {
+			arr2.add(step);
+			step = step + gcd;
+			if (step == arr.get(N-1)) {
+				break;
+			}
 		}
 		
-		// (streetTree[N-1]-streetTree[0])/gcd은 간격의 수니까
-        // 가로수의 나무의 개수를 구하려면 간격의 수에서 + 1을 해야한다. 
-		sb.append((streetTree[N-1]-streetTree[0])/gcd+1-(streetTree.length));
+		sb.append(arr.size()-arr2.size());
 		System.out.println(sb);
+
 		
 	}
 	
-	public static int getGCD (int a, int b) { // 최대공약수
+	public static int getGCD (int a, int b) {
 		if (a < b) {
 			int temp = a;
 			a = b;
@@ -43,6 +46,14 @@ public class no2485 {
 			return a;
 		}
 		return getGCD(b, a % b);
+	}
+	
+	public static int getGCD (List<Integer> arr) {
+		int result = 0;
+		for (int i = 0; i < arr.size(); i++) {
+			result = getGCD(result, arr.get(i) - arr.get(0));
+		}
+		return result;
 	}
 	
 }

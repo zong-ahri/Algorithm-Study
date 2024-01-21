@@ -19,15 +19,13 @@ public class no2485 {
 			streetTree[i] = Integer.parseInt(br.readLine());
 		}
 
-		int gcd = 0; // 가로수 간격의 최대 공약수를 저장하는 변수
+		int gcd = 0;
 		
 		for (int i = 0; i < N-1; i++) {
 			int distance = streetTree[i+1] - streetTree[i];
-			gcd = getGCD(distance, gcd); // 가로수 간격의 최대 공약수
+			gcd = getGCD(distance, gcd);
 		}
 		
-		// (streetTree[N-1]-streetTree[0])/gcd은 간격의 수니까
-        // 가로수의 나무의 개수를 구하려면 간격의 수에서 + 1을 해야한다. 
 		sb.append((streetTree[N-1]-streetTree[0])/gcd+1-(streetTree.length));
 		System.out.println(sb);
 		

@@ -1,0 +1,59 @@
+package step15;
+
+import java.io.*;
+import java.util.*;
+
+public class no2485 {
+
+	public static void main(String[] args) throws IOException {
+		// 가로수
+		// 균일하게 가로수를 심는 문제
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		int N = Integer.parseInt(br.readLine());
+		List<Integer> arr = new ArrayList<>();
+		
+		for (int i = 0; i < N; i++) {
+			arr.add(Integer.parseInt(br.readLine()));
+		}
+		int firstSize = arr.size();
+		int gcd = getGCD(arr);
+
+		Set<Integer> arr2 = new HashSet<>(arr);
+		System.out.println(arr2);
+		int step = arr.get(0);
+		while (true) {
+			arr2.add(step);
+			step = step + gcd;
+			if (step == arr.get(N-1)) {
+				break;
+			}
+		}
+		
+		System.out.println(arr2.size());
+
+		
+	}
+	
+	public static int getGCD (int a, int b) {
+		if (a < b) {
+			int temp = a;
+			a = b;
+			b = temp;
+		}
+		if (b == 0) {
+			return a;
+		}
+		return getGCD(b, a % b);
+	}
+	
+	public static int getGCD (List<Integer> arr) {
+		int result = 0;
+		for (int i = 0; i < arr.size(); i++) {
+			result = getGCD(result, arr.get(i) - arr.get(0));
+		}
+		return result;
+	}
+	
+}
