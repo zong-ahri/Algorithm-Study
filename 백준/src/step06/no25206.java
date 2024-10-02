@@ -4,60 +4,60 @@ import java.util.*;
 
 public class no25206 {
 
-	public static void main(String[] args) {
-		// ³ÊÀÇ ÆòÁ¡Àº
-		// ¿­½ÉÈ÷ ¹®Á¦¸¦ Çª½Ã´Â ¿©·¯ºĞÀº A+ÀÔ´Ï´Ù.
-		
-		
-		//Àü°øÆòÁ¡ = ÇĞÁ¡ x °ú¸ñÆòÁ¡ ÀÇ ÇÕÀ» ÇĞÁ¡ÀÇ ÃÑÇÕÀ¸·Î ³ª´«°ª
-		
-		Scanner scanner = new Scanner(System.in);
-		
-		Map<String, Double> °ú¸ñ¼ºÀû¸ñ·Ï = new HashMap<>();
-		°ú¸ñ¼ºÀû¸ñ·Ï.put("A+", 4.5);
-		°ú¸ñ¼ºÀû¸ñ·Ï.put("A0", 4.0);
-		°ú¸ñ¼ºÀû¸ñ·Ï.put("B+", 3.5);
-		°ú¸ñ¼ºÀû¸ñ·Ï.put("B0", 3.0);
-		°ú¸ñ¼ºÀû¸ñ·Ï.put("C+", 2.5);
-		°ú¸ñ¼ºÀû¸ñ·Ï.put("C0", 2.0);
-		°ú¸ñ¼ºÀû¸ñ·Ï.put("D+", 1.5);
-		°ú¸ñ¼ºÀû¸ñ·Ï.put("D0", 1.0);
-		°ú¸ñ¼ºÀû¸ñ·Ï.put("F", 0.0);
-		
-		List<String> ¼ºÀû¸ñ·Ï = new ArrayList<>();
-		int size = 20;
-		for (int i = 0; i < size; i++) {
-			¼ºÀû¸ñ·Ï.add(scanner.nextLine());
-		}
-		
-		°ú¸ñÆòÁ¡ÇÔ¼ö(¼ºÀû¸ñ·Ï, °ú¸ñ¼ºÀû¸ñ·Ï);
-		
-	}
+    public static void main(String[] args) {
+        // ë„ˆì˜ í‰ì ì€
+        // ì—´ì‹¬íˆ ë¬¸ì œë¥¼ í‘¸ì‹œëŠ” ì—¬ëŸ¬ë¶„ì€ A+ì…ë‹ˆë‹¤.
 
-	// °ú¸ñÆòÁ¡ ±¸ÇöºÎ
-	private static void °ú¸ñÆòÁ¡ÇÔ¼ö(List<String> gradeList, Map<String, Double> subjectGradeList) {
-		double ÇĞÁ¡°ú¸ñÆòÁ¡ÇÕ = 0;
-		double ÇĞÁ¡ÇÕ = 0;
-		
-		for (int i = 0; i < gradeList.size(); i++) {
-			String[] grades = gradeList.get(i).split(" ");
-			if (subjectGradeList.get(grades[2]) != null) {
-				double °ú¸ñÆòÁ¡ = Double.parseDouble(grades[1]);
-				double ÇĞÁ¡ = subjectGradeList.get(grades[2]);
-				double ÇĞÁ¡°ú¸ñÆòÁ¡ = °ú¸ñÆòÁ¡ * ÇĞÁ¡;
-				ÇĞÁ¡°ú¸ñÆòÁ¡ÇÕ += ÇĞÁ¡°ú¸ñÆòÁ¡;
-				ÇĞÁ¡ÇÕ += °ú¸ñÆòÁ¡;
-//				System.out.println("°ú¸ñÀÌ¸§: " + grades[0]);
-//				System.out.println("°ú¸ñÆòÁ¡: " + °ú¸ñÆòÁ¡);
-//				System.out.println("ÇĞÁ¡: " + ÇĞÁ¡);
-//				System.out.println("ÇĞÁ¡°ú¸ñÆòÁ¡: " + ÇĞÁ¡°ú¸ñÆòÁ¡);
-//				System.out.println("ÇĞÁ¡°ú¸ñÆòÁ¡ÇÕ: " + ÇĞÁ¡°ú¸ñÆòÁ¡ÇÕ);
-//				System.out.println("ÇĞÁ¡ÇÕ: " + ÇĞÁ¡ÇÕ);
-			}
+
+        //ì „ê³µí‰ì  = í•™ì  x ê³¼ëª©í‰ì  ì˜ í•©ì„ í•™ì ì˜ ì´í•©ìœ¼ë¡œ ë‚˜ëˆˆê°’
+
+        Scanner scanner = new Scanner(System.in);
+
+        Map<String, Double> ê³¼ëª©ì„±ì ëª©ë¡ = new HashMap<>();
+        ê³¼ëª©ì„±ì ëª©ë¡.put("A+", 4.5);
+        ê³¼ëª©ì„±ì ëª©ë¡.put("A0", 4.0);
+        ê³¼ëª©ì„±ì ëª©ë¡.put("B+", 3.5);
+        ê³¼ëª©ì„±ì ëª©ë¡.put("B0", 3.0);
+        ê³¼ëª©ì„±ì ëª©ë¡.put("C+", 2.5);
+        ê³¼ëª©ì„±ì ëª©ë¡.put("C0", 2.0);
+        ê³¼ëª©ì„±ì ëª©ë¡.put("D+", 1.5);
+        ê³¼ëª©ì„±ì ëª©ë¡.put("D0", 1.0);
+        ê³¼ëª©ì„±ì ëª©ë¡.put("F", 0.0);
+
+        List<String> ì„±ì ëª©ë¡ = new ArrayList<>();
+        int size = 20;
+        for (int i = 0; i < size; i++) {
+            ì„±ì ëª©ë¡.add(scanner.nextLine());
+        }
+
+        ê³¼ëª©í‰ì í•¨ìˆ˜(ì„±ì ëª©ë¡, ê³¼ëª©ì„±ì ëª©ë¡);
+
+    }
+
+    // ê³¼ëª©í‰ì  êµ¬í˜„ë¶€
+    private static void ê³¼ëª©í‰ì í•¨ìˆ˜(List<String> gradeList, Map<String, Double> subjectGradeList) {
+        double í•™ì ê³¼ëª©í‰ì í•© = 0;
+        double í•™ì í•© = 0;
+
+        for (int i = 0; i < gradeList.size(); i++) {
+            String[] grades = gradeList.get(i).split(" ");
+            if (subjectGradeList.get(grades[2]) != null) {
+                double ê³¼ëª©í‰ì  = Double.parseDouble(grades[1]);
+                double í•™ì  = subjectGradeList.get(grades[2]);
+                double í•™ì ê³¼ëª©í‰ì  = ê³¼ëª©í‰ì  * í•™ì ;
+                í•™ì ê³¼ëª©í‰ì í•© += í•™ì ê³¼ëª©í‰ì ;
+                í•™ì í•© += ê³¼ëª©í‰ì ;
+//				System.out.println("ê³¼ëª©ì´ë¦„: " + grades[0]);
+//				System.out.println("ê³¼ëª©í‰ì : " + ê³¼ëª©í‰ì );
+//				System.out.println("í•™ì : " + í•™ì );
+//				System.out.println("í•™ì ê³¼ëª©í‰ì : " + í•™ì ê³¼ëª©í‰ì );
+//				System.out.println("í•™ì ê³¼ëª©í‰ì í•©: " + í•™ì ê³¼ëª©í‰ì í•©);
+//				System.out.println("í•™ì í•©: " + í•™ì í•©);
+            }
 //			System.out.println();
-		}
-		
-		System.out.printf("%f", ÇĞÁ¡°ú¸ñÆòÁ¡ÇÕ/ÇĞÁ¡ÇÕ);
-	}
-	
+        }
+
+        System.out.printf("%f", í•™ì ê³¼ëª©í‰ì í•©/í•™ì í•©);
+    }
+
 }
